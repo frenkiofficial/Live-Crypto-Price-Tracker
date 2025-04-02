@@ -1,0 +1,292 @@
+/* Reset & Basic Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a2e; /* Dark blue background */
+    color: #e0e0e0; /* Light text color */
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+
+/* Header */
+header {
+    background: #16213e; /* Slightly lighter blue */
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    color: #e94560; /* Accent color */
+    margin-bottom: 0.5rem;
+     font-size: 1.8rem;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+#currencySelector {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #4a4a6a;
+    background-color: #2a2a4a;
+    color: #e0e0e0;
+    cursor: pointer;
+}
+
+#lastUpdated {
+    font-size: 0.85em;
+    color: #a0a0c0;
+}
+
+/* Card Styling */
+.card {
+    background: #16213e;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #e94560; /* Accent color */
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #4a4a6a;
+    padding-bottom: 0.5rem;
+}
+
+/* Main Content Layout (Flexbox for side-by-side) */
+.main-content {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.live-prices {
+    flex: 2; /* Takes more space */
+    min-width: 300px; /* Minimum width before wrapping */
+}
+
+.side-content {
+    flex: 1; /* Takes less space */
+    min-width: 300px; /* Minimum width before wrapping */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+/* Table Styling */
+.table-container {
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+}
+
+#cryptoTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#cryptoTable th, #cryptoTable td {
+    padding: 0.8rem 0.6rem;
+    text-align: left;
+    border-bottom: 1px solid #2a2a4a; /* Darker separator */
+}
+
+#cryptoTable th {
+    background-color: #2a2a4a;
+    color: #c0c0e0;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#cryptoTable tbody tr:hover {
+    background-color: #2a2a4a;
+}
+
+#cryptoTable tbody td:first-child { /* Rank */
+     text-align: center;
+}
+
+#cryptoTable tbody td:nth-child(2) { /* Coin Name */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer; /* Indicate clickable for chart */
+    white-space: nowrap;
+}
+#cryptoTable tbody td:nth-child(2) span {
+    font-weight: 500;
+}
+
+
+#cryptoTable img {
+    width: 24px;
+    height: 24px;
+}
+
+.positive-change {
+    color: #34c759; /* Green */
+}
+
+.negative-change {
+    color: #ff3b30; /* Red */
+}
+
+/* Chart Section */
+.chart-container {
+    position: relative;
+    height: 350px; /* Adjust height as needed */
+    width: 100%;
+}
+
+#chartTitle {
+    font-size: 1.2rem;
+}
+.chart-controls {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.chart-controls button {
+    padding: 0.3rem 0.7rem;
+    background-color: #2a2a4a;
+    color: #c0c0e0;
+    border: 1px solid #4a4a6a;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.chart-controls button:hover,
+.chart-controls button.active {
+    background-color: #e94560;
+    color: #fff;
+    border-color: #e94560;
+}
+
+
+/* Gainers & Losers */
+.gainers-losers h3 {
+    font-size: 1rem;
+    color: #c0c0e0;
+    margin-bottom: 0.5rem;
+}
+.gl-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap; /* Wrap if needed */
+}
+.gainers, .losers {
+    flex: 1;
+    min-width: 150px;
+}
+
+.gainers-losers ul {
+    list-style: none;
+    padding: 0;
+}
+
+.gainers-losers li {
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed #2a2a4a;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+.gainers-losers li:last-child {
+    border-bottom: none;
+}
+
+.gainers-losers .coin-name {
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 0.9em;
+    color: #a0a0c0;
+}
+
+footer a {
+    color: #e94560;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+     .main-content {
+        flex-direction: column;
+    }
+    .live-prices, .side-content {
+        flex: 1 1 100%; /* Take full width when stacking */
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header h1 {
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+    }
+    .controls {
+         margin-top: 0.5rem;
+         width: 100%;
+         justify-content: space-between;
+    }
+    #cryptoTable th, #cryptoTable td {
+        padding: 0.6rem 0.4rem;
+        font-size: 0.9rem;
+    }
+    #cryptoTable img {
+        width: 20px;
+        height: 20px;
+    }
+    .gl-container {
+        flex-direction: column; /* Stack gainers/losers vertically */
+    }
+    .gainers { margin-bottom: 1rem; }
+}
+
+@media (max-width: 480px) {
+     body { padding: 0.5rem; }
+     .container { padding: 0 0.5rem; }
+     header h1 { font-size: 1.4rem; }
+     .controls label { display: none; } /* Hide label on very small screens */
+     .card { padding: 1rem; }
+     h2 { font-size: 1.1rem;}
+      #cryptoTable th, #cryptoTable td {
+        font-size: 0.85rem;
+    }
+}
